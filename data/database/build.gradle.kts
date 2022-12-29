@@ -15,7 +15,7 @@ android {
         }
 
     }
-    namespace = "com.semba.data.database"
+    namespace = "com.semba.cryptowallet.data.database"
 }
 
 dependencies {

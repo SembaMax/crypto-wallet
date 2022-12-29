@@ -68,9 +68,17 @@ androidComponents {
 
 dependencies {
 
+    implementation(project(":feature:homescreen:ui"))
+
+    implementation(project(":data:repositories"))
+    implementation(project(":data:model"))
+    implementation(project(":core:common"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.ktx)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.accompanist.systemuicontroller)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material)
@@ -80,6 +88,8 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)

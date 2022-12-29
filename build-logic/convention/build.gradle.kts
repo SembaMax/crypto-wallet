@@ -40,9 +40,13 @@ gradlePlugin {
             id = "cryptowallet.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
         }
-        /*register("androidFeature") {
+        register("androidFeature") {
             id = "cryptowallet.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
-        }*/
+        }
+        register("androidLibraryCompose") {
+            id = "cryptowallet.android.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
     }
 }

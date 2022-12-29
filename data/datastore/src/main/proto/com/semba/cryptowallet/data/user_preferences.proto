@@ -1,0 +1,13 @@
+
+syntax = "proto3";
+
+import "com/semba/cryptowallet/data/theme_config.proto";
+
+option java_package = "com.semba.datastore";
+option java_multiple_files = true;
+
+message UserPreferences {
+
+    ThemeConfigProto theme_config = 1;
+
+}

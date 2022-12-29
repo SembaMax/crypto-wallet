@@ -1,44 +1,52 @@
+import com.google.protobuf.gradle.builtins
+import com.google.protobuf.gradle.generateProtoTasks
+import com.google.protobuf.gradle.protobuf
+import com.google.protobuf.gradle.protoc
+
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id("cryptowallet.android.library")
+    id("cryptowallet.android.hilt")
+    alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.protobuf)
 }
 
 android {
-    namespace = "com.semba.datastore"
-    compileSdk = 32
-
     defaultConfig {
-        minSdk = 23
-        targetSdk = 32
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+        //It's important adding a rule to proguard to prevent deleting protobuf fields.
+        consumerProguardFiles("consumer-proguard-rules.pro")
     }
+    namespace = "com.semba.cryptowallet.data.datastore"
+}
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+// Setup protobuf configuration, generating lite Java and Kotlin classes
+protobuf {
+    protoc {
+        artifact = libs.protobuf.protoc.get().toString()
+    }
+    generateProtoTasks {
+        all().forEach { task ->
+            task.builtins {
+                val java by registering {
+                    option("lite")
+                }
+                val kotlin by registering {
+                    option("lite")
+                }
+            }
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+    implementation(project(":data:model"))
+    implementation(project(":core:common"))
+
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.dataStore.core)
+    implementation(libs.kotlinx.serialization)
+    implementation(libs.kotlinx.collections.immutable)
+    implementation(libs.androidx.dataStore.preferences)
+    implementation(libs.protobuf.kotlin.lite)
 }
