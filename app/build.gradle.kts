@@ -69,13 +69,17 @@ androidComponents {
 dependencies {
 
     implementation(project(":feature:homescreen:ui"))
+    implementation(project(":feature:userwallets:ui"))
+    implementation(project(":feature:wallethistory:ui"))
 
     implementation(project(":data:repositories"))
     implementation(project(":data:model"))
     implementation(project(":core:common"))
+    implementation(project(":core:design"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.ktx)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.accompanist.systemuicontroller)

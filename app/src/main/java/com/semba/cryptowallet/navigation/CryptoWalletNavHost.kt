@@ -6,6 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.semba.cryptowallet.ui.navigation.homeScreen
 import com.semba.cryptowallet.ui.navigation.homeScreenRoute
+import com.semba.cryptowallet.ui.navigation.userWalletsScreen
+import com.semba.cryptowallet.ui.navigation.walletHistoryScreen
 
 @Composable
 fun CryptoWalletNavHost(
@@ -15,6 +17,8 @@ fun CryptoWalletNavHost(
     startDestination: String = homeScreenRoute
 ) {
     NavHost(navController = navController, startDestination = startDestination, modifier = modifier) {
+        walletHistoryScreen()
         homeScreen()
+        userWalletsScreen()
     }
 }
