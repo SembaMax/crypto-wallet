@@ -2,12 +2,14 @@ package com.semba.cryptowallet.ui
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import javax.inject.Inject
 
 @HiltViewModel
-class WalletHistoryViewModel: ViewModel() {
+class WalletHistoryViewModel @Inject constructor(): ViewModel() {
 
-    val walletHistoryUiState: StateFlow<WalletHistoryScreenUiState>
+    val walletHistoryUiState: StateFlow<WalletHistoryScreenUiState> = MutableStateFlow(WalletHistoryScreenUiState.Loading)
 
 }
 

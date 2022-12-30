@@ -8,7 +8,7 @@ import com.semba.cryptowallet.ui.WalletHistoryScreenRoute
 
 const val walletHistoryScreenRoute = "wallet_history_screen_route"
 
-fun NavController.navigateToUserWalletsScreen(navOptions: NavOptions? = null) {
+fun NavController.navigateToWalletHistoryScreen(navOptions: NavOptions? = null) {
     this.navigate(walletHistoryScreenRoute, navOptions)
 }
 
