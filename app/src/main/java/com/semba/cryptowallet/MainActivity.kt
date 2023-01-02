@@ -17,11 +17,13 @@ import com.semba.cryptowallet.common.network.NetworkMonitor
 import com.semba.cryptowallet.model.common.ThemeConfig
 import com.semba.cryptowallet.ui.CryptoWalletApp
 import com.semba.cryptowallet.ui.theme.CryptoWalletTheme
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     @Inject

@@ -36,6 +36,10 @@ gradlePlugin {
             id = "cryptowallet.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
+        register("walletCore") {
+            id = "cryptowallet.wallet.core"
+            implementationClass = "WalletCoreConventionPlugin"
+        }
         register("androidHilt") {
             id = "cryptowallet.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"

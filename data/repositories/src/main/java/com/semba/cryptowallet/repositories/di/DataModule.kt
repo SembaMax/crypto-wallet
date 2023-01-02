@@ -13,4 +13,5 @@ interface DataModule {
 
     @Binds
     fun bindsUserDataRepository(userDataRepository: OfflineUserDataRepository): UserDataRepository
+
 }
