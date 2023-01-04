@@ -1,3 +1,5 @@
+import java.util.Properties
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -7,10 +9,18 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
+    val properties = Properties()
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = uri("https://maven.pkg.github.com/trustwallet/wallet-core")
+            credentials {
+                username = properties.getProperty("GITHUB_USER")
+                password = properties.getProperty("GITHUB_TOKEN")
+            }
+        }
     }
 }
 rootProject.name = "cryptowallet"

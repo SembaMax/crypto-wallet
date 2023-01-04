@@ -1,7 +1,7 @@
 package com.semba.cryptowallet.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.semba.cryptowallet.network.RetrofitService
+import com.semba.cryptowallet.network.WalletNetworkService
 import com.semba.cryptowallet.network.Routes
 import dagger.Module
 import dagger.Provides
@@ -27,7 +27,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun providesRetrofitService(json: Json): RetrofitService
+    fun providesRetrofitService(json: Json): WalletNetworkService
     {
         val networkApi = Retrofit.Builder()
             .baseUrl(Routes.BASE_URL)
@@ -45,7 +45,7 @@ object NetworkModule {
                 json.asConverterFactory("application/json".toMediaType())
             )
             .build()
-            .create(RetrofitService::class.java)
+            .create(WalletNetworkService::class.java)
 
         return networkApi
     }

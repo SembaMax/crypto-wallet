@@ -1,5 +1,5 @@
 plugins {
-    id("cryptowallet.android.feature")
+    id("cryptowallet.android.feature.ui")
     id("cryptowallet.android.library.compose")
 }
 

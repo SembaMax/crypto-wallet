@@ -11,15 +11,18 @@ interface UserWalletDao {
     fun getUserWallets(): Flow<List<UserWalletEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertOrIgnoreUserWallet(entities: List<UserWalletEntity>): List<Long>
+    suspend fun insertOrIgnoreUserWallet(entity: UserWalletEntity): Long
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertOrIgnoreUserWallets(entities: List<UserWalletEntity>): List<Long>
 
     @Update
     suspend fun updateUserWallets(entities: List<UserWalletEntity>)
 
     @Query(
-        value = "DELETE FROM user_wallets WHERE address in (:addresses)"
+        value = "DELETE FROM user_wallets WHERE privateKey in (:privateKeys)"
     )
-    suspend fun deleteUserWallets(addresses: List<String>)
+    suspend fun deleteUserWallets(privateKeys: List<String>)
 
     @Query("DELETE FROM user_wallets")
     suspend fun drop()
