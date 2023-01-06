@@ -22,6 +22,7 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
 
+    implementation(libs.retrofit2)
     implementation(libs.kotlinx.datetime)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization)

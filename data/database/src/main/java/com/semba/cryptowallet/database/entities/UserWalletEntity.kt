@@ -8,6 +8,5 @@ import androidx.room.PrimaryKey
         )
 data class UserWalletEntity (
     @PrimaryKey
-    val privateKey: String,
     val mnemonic: String,
     )

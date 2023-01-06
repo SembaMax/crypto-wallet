@@ -4,6 +4,14 @@ plugins {
 }
 
 android {
+    buildTypes {
+        debug {
+            buildConfigField("String", "BLOCKCHAIN_NETWORK", "\"Mainnet\"")
+        }
+        release {
+            buildConfigField("String", "BLOCKCHAIN_NETWORK", "\"Testnet\"")
+        }
+    }
     namespace = "com.semba.cryptowallet.core.common"
 }
 

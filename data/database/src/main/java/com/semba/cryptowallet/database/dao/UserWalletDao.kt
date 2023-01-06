@@ -20,9 +20,9 @@ interface UserWalletDao {
     suspend fun updateUserWallets(entities: List<UserWalletEntity>)
 
     @Query(
-        value = "DELETE FROM user_wallets WHERE privateKey in (:privateKeys)"
+        value = "DELETE FROM user_wallets WHERE mnemonic in (:mnemonics)"
     )
-    suspend fun deleteUserWallets(privateKeys: List<String>)
+    suspend fun deleteUserWallets(mnemonics: List<String>)
 
     @Query("DELETE FROM user_wallets")
     suspend fun drop()

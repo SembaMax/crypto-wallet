@@ -27,13 +27,11 @@ android {
 
     buildTypes {
         release {
-            buildConfigField("String", "BLOCKCHAIN_NETWORK", "\"Mainnet\"")
             //applicationIdSuffix = CwBuildType.RELEASE.applicationIdSuffix
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         debug {
-            buildConfigField("String", "BLOCKCHAIN_NETWORK", "\"Testnet\"")
             //applicationIdSuffix = CwBuildType.DEBUG.applicationIdSuffix
             isMinifyEnabled = false
         }
