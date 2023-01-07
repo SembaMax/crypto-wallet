@@ -16,4 +16,8 @@ class OfflineUserDataRepository @Inject constructor(
     override suspend fun setThemeConfig(newThemeConfig: ThemeConfig) {
         userPreferencesDataSource.setThemeConfig(newThemeConfig)
     }
+
+    override suspend fun setCurrentWalletMnemonic(mnemonic: String) {
+        userPreferencesDataSource.setCurrentWalletIndex(mnemonic)
+    }
 }

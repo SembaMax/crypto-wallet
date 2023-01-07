@@ -1,11 +1,11 @@
 package com.semba.cryptowallet.model.wallet
 
-enum class WalletCurrency {
-    BITCOIN ,
-    BITCOINCASH ,
-    ETHEREUM ,
-    LITECOIN ,
-    BINANCE ,
-    TRON
+import wallet.core.jni.CoinType
+
+enum class WalletCurrency (val coinType : CoinType) {
+    BITCOIN (CoinType.BITCOIN) ,
+    ETHEREUM (CoinType.ETHEREUM) ,
+    BINANCE (CoinType.BINANCE) ,
+    TRON (CoinType.TRON)
 
 }

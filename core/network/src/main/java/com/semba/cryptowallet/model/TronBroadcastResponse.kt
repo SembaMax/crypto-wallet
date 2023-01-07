@@ -1,5 +1,5 @@
 package com.semba.cryptowallet.model
 
-data class BroadcastResponse(
+data class TronBroadcastResponse(
     val result: Boolean? = null
 )

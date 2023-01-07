@@ -18,8 +18,4 @@ class UserWalletRepository @Inject constructor(val userWalletDao: UserWalletDao,
     override suspend fun deleteWallet(privateKey: String) {
         userWalletDao.deleteUserWallets(listOf(privateKey))
     }
-
-    override suspend fun broadcastTransaction(blockchain: String, rawData: String) {
-        walletNetworkService.broadcastTransaction(blockchain = blockchain, rawData = rawData.toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull()))
-    }
 }

@@ -11,7 +11,7 @@ class UserPreferencesDataSource @Inject constructor(
     private val userPreferences: DataStore<UserPreferences>
 ){
     val userData = userPreferences.data.map {
-        UserData(themeConfig = it.themeConfig)
+        UserData(themeConfig = it.themeConfig, currentWalletMnemonic = it.currentWalletMnemonic)
     }
 
     suspend fun setThemeConfig(newThemeConfig: ThemeConfig) {
@@ -20,6 +20,13 @@ class UserPreferencesDataSource @Inject constructor(
                 themeConfig = newThemeConfig
             )
         }
+    }
 
+    suspend fun setCurrentWalletIndex(mnemonic: String) {
+        userPreferences.updateData {
+            it.copy(
+                currentWalletMnemonic = mnemonic
+            )
+        }
     }
 }

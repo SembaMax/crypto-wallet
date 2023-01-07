@@ -9,4 +9,5 @@ interface UserDataRepository {
     val userData: Flow<UserData>
 
     suspend fun setThemeConfig(newThemeConfig: ThemeConfig)
+    suspend fun setCurrentWalletMnemonic(mnemonic: String)
 }

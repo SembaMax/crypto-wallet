@@ -42,6 +42,7 @@ tink = "1.7.0"
 securityCrypto = "1.0.0"
 trustWallet = "3.1.7"
 headlong = "9.1.1"
+marketData = "63b5860"
 
 accessibilityTestFramework = "4.0.0"
 
@@ -130,6 +131,7 @@ crypto-tink = { module = "com.google.crypto.tink:tink-android", version.ref = "t
 androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
 trust-wallet-core = { module = "com.trustwallet:wallet-core", version.ref = "trustWallet" }
 esaulpaugh-headlong = { module = "com.esaulpaugh:headlong", version.ref = "headlong" }
+blockchain-market-data = { module = "com.github.horizontalsystems:market-kit-android", version.ref = "marketData" }
 
 protobuf-kotlin-lite = { group = "com.google.protobuf", name = "protobuf-kotlin-lite", version.ref = "protobuf" }
 protobuf-protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protobuf" }

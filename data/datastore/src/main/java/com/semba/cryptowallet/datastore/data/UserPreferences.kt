@@ -5,5 +5,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class UserPreferences (
-    val themeConfig: ThemeConfig = ThemeConfig.SYSTEM
+    val themeConfig: ThemeConfig = ThemeConfig.SYSTEM,
+    val currentWalletMnemonic : String = ""
 )

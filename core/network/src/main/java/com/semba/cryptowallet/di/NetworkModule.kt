@@ -1,8 +1,7 @@
 package com.semba.cryptowallet.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.semba.cryptowallet.network.WalletNetworkService
-import com.semba.cryptowallet.network.Routes
+import com.semba.cryptowallet.network.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,10 +26,10 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun providesRetrofitService(json: Json): WalletNetworkService
+    fun providesWalletRetrofitService(json: Json): WalletNetworkService
     {
         val networkApi = Retrofit.Builder()
-            .baseUrl(Routes.BASE_URL)
+            .baseUrl(Routes.WALLET_BASE_URL)
             .client(
                 OkHttpClient.Builder()
                     .addInterceptor(
@@ -46,6 +45,107 @@ object NetworkModule {
             )
             .build()
             .create(WalletNetworkService::class.java)
+
+        return networkApi
+    }
+
+    @Provides
+    @Singleton
+    fun providesBitcoinRetrofitService(json: Json): BitcoinNetworkService
+    {
+        val networkApi = Retrofit.Builder()
+            .baseUrl(Routes.BITCOIN_BASE_URL)
+            .client(
+                OkHttpClient.Builder()
+                    .addInterceptor(
+                        HttpLoggingInterceptor().apply {
+                            setLevel(HttpLoggingInterceptor.Level.BODY)
+                        }
+                    )
+                    .build()
+            )
+            .addConverterFactory(
+                @OptIn(ExperimentalSerializationApi::class)
+                json.asConverterFactory("application/json".toMediaType())
+            )
+            .build()
+            .create(BitcoinNetworkService::class.java)
+
+        return networkApi
+    }
+
+    @Provides
+    @Singleton
+    fun providesEthereumRetrofitService(json: Json): EthereumNetworkService
+    {
+        val ethereumApiKey = ""
+        val networkApi = Retrofit.Builder()
+            .baseUrl(Routes.ETHEREUM_BASE_URL + ethereumApiKey)
+            .client(
+                OkHttpClient.Builder()
+                    .addInterceptor(
+                        HttpLoggingInterceptor().apply {
+                            setLevel(HttpLoggingInterceptor.Level.BODY)
+                        }
+                    )
+                    .build()
+            )
+            .addConverterFactory(
+                @OptIn(ExperimentalSerializationApi::class)
+                json.asConverterFactory("application/json".toMediaType())
+            )
+            .build()
+            .create(EthereumNetworkService::class.java)
+
+        return networkApi
+    }
+
+    @Provides
+    @Singleton
+    fun providesBinanceRetrofitService(json: Json): BinanceNetworkService
+    {
+        val networkApi = Retrofit.Builder()
+            .baseUrl(Routes.BINANCE_BASE_URL)
+            .client(
+                OkHttpClient.Builder()
+                    .addInterceptor(
+                        HttpLoggingInterceptor().apply {
+                            setLevel(HttpLoggingInterceptor.Level.BODY)
+                        }
+                    )
+                    .build()
+            )
+            .addConverterFactory(
+                @OptIn(ExperimentalSerializationApi::class)
+                json.asConverterFactory("application/json".toMediaType())
+            )
+            .build()
+            .create(BinanceNetworkService::class.java)
+
+        return networkApi
+    }
+
+    @Provides
+    @Singleton
+    fun providesTronRetrofitService(json: Json): TronNetworkService
+    {
+        val networkApi = Retrofit.Builder()
+            .baseUrl(Routes.TRON_BASE_URL)
+            .client(
+                OkHttpClient.Builder()
+                    .addInterceptor(
+                        HttpLoggingInterceptor().apply {
+                            setLevel(HttpLoggingInterceptor.Level.BODY)
+                        }
+                    )
+                    .build()
+            )
+            .addConverterFactory(
+                @OptIn(ExperimentalSerializationApi::class)
+                json.asConverterFactory("application/json".toMediaType())
+            )
+            .build()
+            .create(TronNetworkService::class.java)
 
         return networkApi
     }
