@@ -1,5 +1,7 @@
 package com.semba.cryptowallet.repositories.repos
 
+import com.semba.cryptowallet.model.EthereumSendResponse
+
 interface EthereumRepository {
-    suspend fun broadcastTransaction(rawData: String)
+    suspend fun sendTransaction(rawTransaction: String): EthereumSendResponse
 }

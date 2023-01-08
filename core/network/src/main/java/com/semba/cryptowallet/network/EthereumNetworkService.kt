@@ -9,5 +9,5 @@ import retrofit2.http.POST
 interface EthereumNetworkService {
 
     @POST
-    suspend fun sendTransaction(@Body rawData: RequestBody): NetworkResponse<EthereumSendResponse>
+    suspend fun sendTransaction(@Body rawTransaction: RequestBody): NetworkResponse<EthereumSendResponse>
 }

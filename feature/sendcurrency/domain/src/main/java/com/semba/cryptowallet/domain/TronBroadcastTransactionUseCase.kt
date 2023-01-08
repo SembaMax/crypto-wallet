@@ -2,18 +2,13 @@ package com.semba.cryptowallet.domain
 
 import com.google.protobuf.ByteString
 import com.semba.cryptowallet.common.utils.hexStringToByteArray
-import com.semba.cryptowallet.model.wallet.WalletCurrency
 import com.semba.cryptowallet.repositories.impls.OfflineUserDataRepository
-import com.semba.cryptowallet.repositories.impls.UserWalletRepository
 import com.semba.cryptowallet.repositories.repos.TronRepository
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
 import wallet.core.java.AnySigner
 import wallet.core.jni.CoinType
 import wallet.core.jni.HDWallet
-import wallet.core.jni.proto.Binance
-import wallet.core.jni.proto.Bitcoin
-import wallet.core.jni.proto.Ethereum
 import wallet.core.jni.proto.Tron
 import javax.inject.Inject
 

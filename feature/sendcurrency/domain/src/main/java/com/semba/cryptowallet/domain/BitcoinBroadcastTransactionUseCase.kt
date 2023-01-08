@@ -1,16 +1,14 @@
 package com.semba.cryptowallet.domain
 
-import com.semba.cryptowallet.model.wallet.WalletCurrency
+import com.semba.cryptowallet.repositories.impls.BitcoinBlockchainRepository
 import com.semba.cryptowallet.repositories.impls.OfflineUserDataRepository
-import com.semba.cryptowallet.repositories.impls.UserWalletRepository
-import com.semba.cryptowallet.repositories.repos.BitcoinRepository
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
 import wallet.core.jni.CoinType
 import wallet.core.jni.HDWallet
 import javax.inject.Inject
 
-class BitcoinBroadcastTransactionUseCase @Inject constructor(val bitcoinRepository: BitcoinRepository,
+class BitcoinBroadcastTransactionUseCase @Inject constructor(val bitcoinRepository: BitcoinBlockchainRepository,
                                                              val userDataRepository: OfflineUserDataRepository
 ) {
 

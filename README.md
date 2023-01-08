@@ -2,7 +2,7 @@
 
 
 ## ℹ️ Overview
-Multi wallet app for Bitcoin, Ethereum, Binance and Tron blockchains.
+Multi wallet app for Bitcoin, Ethereum, Binance and Tron blockchains. using the most trendy tech and tools.
 
 
 ## 📷 Screenshots
@@ -26,6 +26,7 @@ The app is built with the most modern clean Android architecture recommended by 
 ## 🖥️ Tech stack
 
 - Jetpack Compose
+- Compose Navigation
 - Retrofit2
 - DataStore
 - Room
