@@ -21,7 +21,12 @@ Multi wallet app for Bitcoin, Ethereum, Binance and Tron blockchains. using the 
 The app is built with the most modern clean Android architecture recommended by Google.
 
 #### MAD Architecture
-<img src="https://raw.githubusercontent.com/ImangazalievM/CleanArchitectureManifest/master/images/CleanArchitectureLayers.png" width="1024" />
+
+<p align="center">
+<img src="https://developer.android.com/static/topic/libraries/architecture/images/mad-arch-overview-ui.png" width="500" />
+<img src="https://developer.android.com/static/topic/libraries/architecture/images/mad-arch-overview-data.png" width="500" />
+</p>
+
 
 ## 🖥️ Tech stack
 
