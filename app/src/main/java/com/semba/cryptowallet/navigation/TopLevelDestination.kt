@@ -3,6 +3,7 @@ package com.semba.cryptowallet.navigation
 import com.semba.cryptowallet.design.icon.CwIcon
 import com.semba.cryptowallet.design.icon.CwIcon.DrawableResourceIcon
 import com.semba.cryptowallet.design.icon.CwIcons
+import kotlin.reflect.KProperty
 import com.semba.cryptowallet.feature.homescreen.ui.R as HomeR
 import com.semba.cryptowallet.feature.userwallets.ui.R as UserWalletsR
 import com.semba.cryptowallet.feature.wallethistory.ui.R as WalletHistoryR
