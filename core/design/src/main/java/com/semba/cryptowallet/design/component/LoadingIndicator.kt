@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.semba.cryptowallet.ui.theme.*
 
 @Composable
 fun LoadingIndicator(
@@ -36,14 +37,14 @@ fun LoadingIndicator(
 
     val strokeWidth = 30.dp
     val stroke = with(LocalDensity.current) {
-        Stroke(width = strokeWidth.toPx(), cap = StrokeCap.Square)
+        Stroke(width = strokeWidth.toPx(), cap = StrokeCap.Round)
     }
 
     Canvas(modifier = modifier.progressSemantics().size(48.dp).padding(strokeWidth/2)) {
-        drawCircle(color = MaterialTheme.colorScheme.inversePrimary, style = stroke)
+        drawCircle(color = ProgressBarLight, style = stroke)
 
         drawArc(
-            color = MaterialTheme.colorScheme.onPrimary ,
+            color = ProgressBar ,
             startAngle = currentArchStartAngle.toFloat() - 90,
             sweepAngle = 90f,
             useCenter = false,

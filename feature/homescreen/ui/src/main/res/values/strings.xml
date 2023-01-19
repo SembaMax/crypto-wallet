@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="home_menu_text">Home</string>
+    <string name="send_currency">Send</string>
+    <string name="receive_currency">Receive</string>
 </resources>

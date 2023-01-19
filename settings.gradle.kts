@@ -1,11 +1,5 @@
 import java.util.Properties
 
-include(":feature:sendcurrency:domain")
-
-
-include(":feature:sendcurrency:ui")
-
-
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -20,7 +14,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { "https://jitpack.io" }
+        maven { url = uri("https://jitpack.io") }
         maven {
             url = uri("https://maven.pkg.github.com/trustwallet/wallet-core")
             credentials {
@@ -50,3 +44,5 @@ include(":core:network")
 include(":core:design")
 include(":feature:userwallets:ui")
 include(":feature:userwallets:domain")
+include(":feature:sendcurrency:domain")
+include(":feature:sendcurrency:ui")

@@ -13,13 +13,21 @@ class AndroidFeatureUiConventionPlugin: Plugin<Project> {
                 apply("cryptowallet.android.library")
                 apply("cryptowallet.android.hilt")
             }
+
+            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
             extensions.configure<LibraryExtension> {
                 defaultConfig {
 
                 }
-            }
 
-            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+                buildFeatures {
+                    compose = true
+                }
+
+                composeOptions {
+                    kotlinCompilerExtensionVersion = libs.findVersion("androidxComposeCompiler").get().toString()
+                }
+            }
 
             dependencies {
                 add("implementation", project(":data:model"))
