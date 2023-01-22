@@ -70,7 +70,7 @@ dependencies {
 
     implementation(project(":feature:homescreen:ui"))
     implementation(project(":feature:userwallets:ui"))
-    implementation(project(":feature:wallethistory:ui"))
+    implementation(project(":feature:market:ui"))
 
     implementation(project(":data:repositories"))
     implementation(project(":data:model"))

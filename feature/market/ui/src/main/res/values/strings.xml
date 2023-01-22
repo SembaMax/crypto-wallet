@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="history_menu_text">History</string>
+    <string name="market_menu_text">Market</string>
 </resources>

@@ -7,8 +7,8 @@ import com.semba.cryptowallet.core.design.R
 object CwIcons {
     val MenuHomeOn = R.drawable.ic_home_menu_on
     val MenuHomeOff = R.drawable.ic_home_menu_off
-    val MenuHistoryOn = R.drawable.ic_history_menu_on
-    val MenuHistoryOff = R.drawable.ic_history_menu_off
+    val MenuMarketOn = R.drawable.ic_market_menu_on
+    val MenuMarketOff = R.drawable.ic_market_menu_off
     val MenuWalletOn = R.drawable.ic_wallet_menu_on
     val MenuWalletOff = R.drawable.ic_wallet_menu_off
     val Settings = R.drawable.ic_settings

@@ -105,6 +105,7 @@ fun TransferSection() {
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround, verticalAlignment = Alignment.CenterVertically) {
 
         Button(modifier = Modifier
+            .defaultMinSize(minWidth = 80.dp)
             .padding(horizontal = 15.dp, vertical = 10.dp)
             .clip(
                 RoundedCornerShape(10.dp)
@@ -117,6 +118,7 @@ fun TransferSection() {
         }
 
         Button( modifier = Modifier
+            .defaultMinSize(minWidth = 80.dp)
             .padding(horizontal = 15.dp, vertical = 10.dp)
             .clip(
                 RoundedCornerShape(10.dp)

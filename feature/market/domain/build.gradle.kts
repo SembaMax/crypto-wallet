@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.semba.cryptowallet.feature.wallethistory.domain"
+    namespace = "com.semba.cryptowallet.feature.market.domain"
 }
 
 dependencies {

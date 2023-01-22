@@ -31,7 +31,7 @@ class CryptoWalletAppState(
         @Composable get() = when (currentDestination?.route) {
             homeScreenRoute -> TopLevelDestination.HOME
             userWalletsScreenRoute -> TopLevelDestination.USER_WALLETS
-            walletHistoryScreenRoute -> TopLevelDestination.WALLET_HISTORY
+            marketScreenRoute -> TopLevelDestination.WALLET_HISTORY
             else -> null
         }
 
@@ -59,7 +59,7 @@ class CryptoWalletAppState(
             when (topLevelDestination) {
                 TopLevelDestination.HOME -> navController.navigateToHomeScreen()
                 TopLevelDestination.USER_WALLETS -> navController.navigateToUserWalletsScreen()
-                TopLevelDestination.WALLET_HISTORY -> navController.navigateToWalletHistoryScreen()
+                TopLevelDestination.WALLET_HISTORY -> navController.navigateToMarketScreen()
             }
         }
     }

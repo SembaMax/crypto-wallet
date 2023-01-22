@@ -3,10 +3,9 @@ package com.semba.cryptowallet.navigation
 import com.semba.cryptowallet.design.icon.CwIcon
 import com.semba.cryptowallet.design.icon.CwIcon.DrawableResourceIcon
 import com.semba.cryptowallet.design.icon.CwIcons
-import kotlin.reflect.KProperty
 import com.semba.cryptowallet.feature.homescreen.ui.R as HomeR
 import com.semba.cryptowallet.feature.userwallets.ui.R as UserWalletsR
-import com.semba.cryptowallet.feature.wallethistory.ui.R as WalletHistoryR
+import com.semba.cryptowallet.feature.market.ui.R as MarketR
 
 enum class TopLevelDestination (
     val selectedIcon: CwIcon,
@@ -28,9 +27,9 @@ enum class TopLevelDestination (
         titleTextId = UserWalletsR.string.user_wallets_menu_text
     ),
     WALLET_HISTORY(
-        selectedIcon = DrawableResourceIcon(CwIcons.MenuHistoryOn),
-        unselectedIcon = DrawableResourceIcon(CwIcons.MenuHistoryOff),
-        textId = WalletHistoryR.string.history_menu_text,
-        titleTextId = WalletHistoryR.string.history_menu_text
+        selectedIcon = DrawableResourceIcon(CwIcons.MenuMarketOn),
+        unselectedIcon = DrawableResourceIcon(CwIcons.MenuMarketOff),
+        textId = MarketR.string.market_menu_text,
+        titleTextId = MarketR.string.market_menu_text
     )
 }
