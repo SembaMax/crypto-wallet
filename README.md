@@ -9,6 +9,10 @@ Multi wallet app for Bitcoin, Ethereum, Binance and Tron blockchains. using the 
 
 🚧 Work is still in progress
 
+<p align="center">
+<img src="https://github.com/SembaMax/crypto-wallet/blob/main/screenshots/Screenshot1.jpg" width="500" />
+</p>
+
 ## 🗒️ Features
 
 - Themes
@@ -32,12 +36,14 @@ The app is built with the most modern clean Android architecture recommended by 
 
 - Jetpack Compose
 - Compose Navigation
+- Flows
 - Retrofit2
 - DataStore
+- Protobuf
 - Room
 - Wallet Core
 - Hilt
-- Coroutines + Flows
+- Coroutines
 - Coil
 - Gradle kts
 - Modularization
