@@ -1,5 +1,8 @@
 package com.semba.cryptowallet.ui.navigation
 
+import androidx.compose.foundation.background
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
@@ -14,6 +17,6 @@ fun NavController.navigateToHomeScreen(navOptions: NavOptions? = null) {
 
 fun NavGraphBuilder.homeScreen() {
     composable(route = homeScreenRoute) {
-        HomeScreenRoute()
+        HomeScreenRoute(modifier = Modifier.background(MaterialTheme.colorScheme.background))
     }
 }

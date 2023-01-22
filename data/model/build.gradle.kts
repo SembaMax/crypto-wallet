@@ -14,5 +14,6 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:design"))
     implementation(libs.kotlinx.serialization)
 }

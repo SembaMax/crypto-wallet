@@ -13,10 +13,10 @@ class HomeScreenViewModel @Inject constructor(val userDataRepository: UserDataRe
 
     val homeUiState: StateFlow<HomeScreenUiState> = MutableStateFlow(HomeScreenUiState.Success("0", currencies = initCurrenciesList()))
 
-    fun initCurrenciesList(): List<CurrencyBalance> {
-        val list = mutableListOf<CurrencyBalance>()
+    fun initCurrenciesList(): List<CurrencyItem> {
+        val list = mutableListOf<CurrencyItem>()
         WalletCurrency.values().forEach {
-            list.add(CurrencyBalance(it.name, "0"))
+            list.add(CurrencyItem(it.iconRes, it.name, "0"))
         }
         return list
     }
@@ -24,10 +24,11 @@ class HomeScreenViewModel @Inject constructor(val userDataRepository: UserDataRe
 
 sealed interface HomeScreenUiState {
     object Loading: HomeScreenUiState
-    data class Success(val balanceInUSD: String, val currencies: List<CurrencyBalance>): HomeScreenUiState
+    data class Success(val balanceInUSD: String, val currencies: List<CurrencyItem>): HomeScreenUiState
 }
 
-data class CurrencyBalance (
+data class CurrencyItem (
+    val iconRes: Int,
     val currencyName: String,
     val balance: String
         )

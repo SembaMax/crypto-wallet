@@ -2,13 +2,14 @@ package com.semba.cryptowallet.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
-val ProgressBarLight = Color(0xFFC7DAD8)
+val PrimaryDark = Color(0xFF3700B3)
+val PrimaryLight = Color(0xFF3700B3)
+val SecondaryDark = Color(0xff11d79b)
+val SecondaryLight = Color(0xff11d79b)
+val ProgressBarLight = Color.LightGray
 val ProgressBar = Color(0xFF03DAC5)
-val BalanceArcStroke = Color(0xFF6200EE)
-val ButtonBackground = Color(0xFF6200EE)
-val ButtonTextColor = Color(0xFFFFFFFF)
-val CurrencyItemBackground = Color(0xFFBB86FC)
+val CurrencyItemBackground = Color.White
+val BackgroundDark = PrimaryDark
+val BackgroundLight = PrimaryLight
+val onSurfaceDark = SecondaryDark
+val onSurfaceLight = SecondaryLight
