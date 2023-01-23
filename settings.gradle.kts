@@ -1,5 +1,8 @@
 import java.util.Properties
 
+include(":benchmark")
+
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
