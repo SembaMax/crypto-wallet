@@ -1,5 +1,8 @@
 import java.util.Properties
 
+include(":core:testing")
+
+
 include(":benchmark")
 
 
@@ -31,7 +34,6 @@ rootProject.name = "cryptowallet"
 include(":app")
 include(":data:database")
 include(":data:repositories")
-include(":core:di")
 include(":core:common")
 include(":feature:createwallet:domain")
 include(":feature:market:domain")

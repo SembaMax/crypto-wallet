@@ -1,4 +1,4 @@
-package com.semba.di
+package com.semba.cryptowallet.testing
 
 import org.junit.Test
 
