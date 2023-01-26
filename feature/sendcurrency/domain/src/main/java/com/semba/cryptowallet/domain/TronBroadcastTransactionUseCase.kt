@@ -31,27 +31,27 @@ class TronBroadcastTransactionUseCase @Inject constructor(val tronRepository: Tr
 
             val blockBean = tronRepository.getLatestBlock()
 
-            val time: Long = blockBean.blockHeader?.rawData?.timestamp ?: 0L
+            val time: Long = blockBean.timestamp ?: 0L
 
             val blockHeader = Tron.BlockHeader.newBuilder()
                 .setTimestamp(time)
                 .setTxTrieRoot(
                     ByteString.copyFrom(
-                        blockBean.blockHeader?.rawData?.txTrieRoot?.hexStringToByteArray()
+                        blockBean.txTrieRoot?.hexStringToByteArray()
                     )
                 )
                 .setParentHash(
                     ByteString.copyFrom(
-                        blockBean.blockHeader?.rawData?.parentHash?.hexStringToByteArray()
+                        blockBean.parentHash?.hexStringToByteArray()
                     )
                 )
                 .setWitnessAddress(
                     ByteString.copyFrom(
-                        blockBean.blockHeader?.rawData?.witnessAddress?.hexStringToByteArray()
+                        blockBean.witnessAddress?.hexStringToByteArray()
                     )
                 )
-                .setNumber(blockBean.blockHeader?.rawData?.number ?: 0L)
-                .setVersion(blockBean.blockHeader?.rawData?.version ?: 0)
+                .setNumber(blockBean.number ?: 0L)
+                .setVersion(blockBean.version ?: 0)
                 .build()
 
             val transaction = Tron.Transaction.newBuilder().apply {
@@ -73,7 +73,7 @@ class TronBroadcastTransactionUseCase @Inject constructor(val tronRepository: Tr
                 e.printStackTrace()
             }
 
-            tronRepository.broadcastTransaction(output?.json ?: "")
+            tronRepository.broadcastTransaction(output?.json ?: "").isSuccessful
         }
     }
 
