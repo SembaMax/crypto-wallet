@@ -13,6 +13,5 @@ import javax.inject.Singleton
 object TestDispatcherModule {
 
     @Provides
-    @Singleton
     fun providesTestDispatcher() : TestDispatcher = UnconfinedTestDispatcher()
 }

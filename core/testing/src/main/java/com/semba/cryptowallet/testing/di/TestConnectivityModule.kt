@@ -14,7 +14,7 @@ import dagger.hilt.testing.TestInstallIn
     replaces = [ConnectivityModule::class]
 )
 interface TestConnectivityModule {
-    
+
     @Binds
     fun bindsTestNetworkMonitor(testNetworkMonitor: TestNetworkMonitor): NetworkMonitor
 }

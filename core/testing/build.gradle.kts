@@ -11,6 +11,10 @@ android {
 dependencies {
 
     implementation(project(":core:common"))
+    implementation(project(":data:datastore"))
+
+    implementation(libs.androidx.dataStore.core)
+
     api(libs.junit4)
     api(libs.androidx.test.core)
     api(libs.kotlinx.coroutines.test)
