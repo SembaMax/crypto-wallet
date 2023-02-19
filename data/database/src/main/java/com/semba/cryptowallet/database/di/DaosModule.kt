@@ -9,7 +9,7 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DaosModule {
+object DaosModule {
 
     @Provides
     fun providesUserWalletDao(database: CryptoWalletDatabase): UserWalletDao
